@@ -56,7 +56,8 @@ com_crashlytics_export_strings.xml
 node_modules/
 bower_components/
 *.log
+.sass-cache
+.tmp
 
 build/
 dist/
-.idea/encodings.xml
