@@ -213,7 +213,7 @@
                 </div>
                 <!-- /.form-group -->
 
-                <h5 class="question">Rango de edad:</h5>
+                <h5 class="question">Rango de edad</h5>
                 <div class="form-group">
 
                   <input type="radio" id="age-min" name="age" value="Menos de 18 años">
@@ -235,7 +235,7 @@
                 </div>
                 <!-- /.form-group -->
 
-                <h5 class="question">Escriba su testimonio:</h5>
+                <h5 class="question">Escriba su testimonio</h5>
                 <div class="form-group">
 
                   <textarea id="testimonial" name="testimonial" class="form-control" value=""></textarea>
@@ -247,6 +247,30 @@
 
                 </div>
                 <!-- /.form-group -->
+
+                <hr>
+
+                <div class="alert alert-info">
+                  <p>Solicitamos su nombre y cédula para así dar una identidad real a su testimonio, en caso de no proveer los datos su testimonio se publicará de manera anónima.</p>
+                </div>
+
+                <h5 class="question">Su nombre completo</h5>
+                <div class="form-group">
+
+                  <input type="text" id="full_name" name="full_name" class="form-control" value="" placeholder="Nombre Completo">
+
+                </div>
+                <!-- /.form-group -->
+
+                <h5 class="question">N&uacute;mero de c&eacute;dula</h5>
+                <div class="form-group">
+
+                  <input type="text" id="id_number" name="id_number" class="form-control" value="" placeholder="C&eacute;dula">
+
+                </div>
+                <!-- /.form-group -->
+
+                <hr/>
 
                 <div class="disclaimer" ng-class="{ 'incomplete' : respondent.$invalid }">
                   <p class="text-danger">Responde los campos requeridos para enviar el formulario</p>
