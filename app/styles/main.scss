@@ -1,0 +1,53 @@
+/* Bootstrap
+-------------------------------------------------- */
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+
+
+/* Font Awesome
+-------------------------------------------------- */
+$fa-font-path: "../bower_components/font-awesome/fonts/";
+@import "font-awesome/scss/font-awesome.scss";
+
+
+/* Morris Charts
+-------------------------------------------------- */
+@import "../bower_components/morrisjs/morris.css";
+
+
+/* Variables
+-------------------------------------------------- */
+@import 'variables';
+
+
+/* Elements
+-------------------------------------------------- */
+@import 'elements/buttons';
+@import 'elements/boxes';
+
+
+/* Globals
+-------------------------------------------------- */
+@import 'global/menu';
+@import 'global/footer';
+
+
+/* Modules
+-------------------------------------------------- */
+@import 'modules/intro';
+@import 'modules/areas';
+@import 'modules/testimonials';
+@import 'modules/survey';
+
+
+/* General
+-------------------------------------------------- */
+body {
+  background: $light-grey;
+  font-family: 'Open Sans';
+  color: $grey;
+}
+
+
+/* Bootstrap Overrides
+-------------------------------------------------- */

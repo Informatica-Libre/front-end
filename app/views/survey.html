@@ -1,0 +1,331 @@
+<div class="survey-holder" survey-holder>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-sm-6">
+
+        <div class="box">
+
+          <div class="box-header">
+
+            <h3 class="box-title">Participa en la encuesta <span class="box-icon icon-orange"><i class="fa fa-pencil-square-o"></i></span></h3>
+
+          </div>
+          <!-- /.box-header -->
+
+          <div class="box-content">
+
+            <p class="lead">¡Ayúdanos a conocer al gremio! Conocer a la comunidad nos permite tener suficiente información para defender nuestros derechos, solo te tomará un minuto.</p>
+
+            <div class="rules">
+              <p class="text-info">* Indica campos requeridos</p>
+            </div>
+
+            <form action="respondent/create" role="form" name="respondent" method="POST" class="survey" novalidate>
+
+              <fieldset>
+
+                <h5 class="question">M&aacute;ximo grado acad&eacute;mico obtenido *</h5>
+                <div class="form-group">
+
+                  <input type="radio" id="degree-no" name="degree" ng-model="degree" ng-required="!degree" value="No posee ning&uacute;n grado acad&eacute;mico">
+                  <label for="degree-no">No posee ning&uacute;n grado acad&eacute;mico</label>
+                  <br>
+                  <input type="radio" id="degree-diploma" name="degree" ng-model="degree" ng-required="!degree" value="Posee t&eacute;cnico o diplomado">
+                  <label for="degree-diploma">Posee t&eacute;cnico o diplomado</label>
+                  <br>
+                  <input type="radio" id="degree-incomplete" name="degree" ng-model="degree" ng-required="!degree" value="Bachillerato incompleto en inform&aacute;tica">
+                  <label for="degree-incomplete">Bachillerato incompleto en inform&aacute;tica</label>
+                  <br>
+                  <input type="radio" id="degree-unrelated" name="degree" ng-model="degree" ng-required="!degree" value="Bachillerato completo en otra carrera diferente de inform&aacute;tica">
+                  <label for="degree-unrelated">Bachillerato completo en otra carrera diferente de inform&aacute;tica</label>
+                  <br>
+                  <input type="radio" id="degree-completed" name="degree" ng-model="degree" ng-required="!degree" value="Bachillerato completo en inform&aacute;tica/sistemas">
+                  <label for="degree-completed">Bachillerato completo en inform&aacute;tica/sistemas</label>
+
+                  <p ng-show="respondent.degree.$invalid && !respondent.degree.$pristine" class="help-block">Campo Requerido.</p>
+
+                </div>
+                <!-- /.form-group -->
+
+                <h5 class="question">Tiene certificaciones del tipo de Oracle, Zend, Cisco, etc *</h5>
+                <div class="form-group">
+
+                  <input type="radio" id="certification-yes" name="certification" ng-model="certification" ng-required="!certification" value="Si">
+                  <label for="certification-yes">Si</label>
+                  <br>
+                  <input type="radio" id="certification-no" name="certification" ng-model="certification" ng-required="!certification" value="No">
+                  <label for="certification-no">No</label>
+
+                  <p ng-show="respondent.certification.$invalid && !respondent.certification.$pristine" class="help-block">Campo Requerido.</p>
+
+                </div>
+                <!-- /.form-group -->
+
+                <h5 class="question">Laboralmente es usted: *</h5>
+                <div class="form-group">
+
+                  <input type="radio" id="employment-public" name="employment" ng-model="employment" ng-required="!employment" value="Empleado del sector p&uacute;blico">
+                  <label for="employment-public">Empleado del sector p&uacute;blico</label>
+                  <br>
+                  <input type="radio" id="employment-private" name="employment" ng-model="employment" ng-required="!employment" value="Empleado del sector privado">
+                  <label for="employment-private">Empleado del sector privado</label>
+                  <br>
+                  <input type="radio" id="employment-own" name="employment" ng-model="employment" ng-required="!employment" value="Negocio propio/trabajador independiente">
+                  <label for="employment-own">Negocio propio/trabajador independiente</label>
+                  <br>
+
+                  <p ng-show="respondent.employment.$invalid && !respondent.employment.$pristine" class="help-block">Campo Requerido.</p>
+
+                </div>
+                <!-- /.form-group -->
+
+                <h5 class="question">Años aprox. de experiencia en el área *:</h5>
+                <div class="form-group">
+
+                  <input type="radio" id="experience-min" name="experience" ng-model="experience" ng-required="!experience" value="Menos de 3 años">
+                  <label for="experience-min">Menos de 3 años</label>
+                  <br>
+                  <input type="radio" id="experience-3-to-5" name="experience" ng-model="experience" ng-required="!experience" value="3 a 5 años">
+                  <label for="experience-3-to-5">3 a 5 años</label>
+                  <br>
+                  <input type="radio" id="experience-6-to-10" name="experience" ng-model="experience" ng-required="!experience" value="6 a 10 años">
+                  <label for="experience-6-to-10">6 a 10 años</label>
+                  <br>
+                  <input type="radio" id="experience-11-to-20" name="experience" ng-model="experience" ng-required="!experience" value="11 a 20 años">
+                  <label for="experience-11-to-20">11 a 20 años</label>
+                  <br>
+                  <input type="radio" id="experience-max" name="experience" ng-model="experience" ng-required="!experience" value="Más de 20 años">
+                  <label for="experience-max">Más de 20 años</label>
+                  <br>
+
+                  <p ng-show="respondent.experience.$invalid && !respondent.experience.$pristine" class="help-block">Campo Requerido.</p>
+
+                </div>
+                <!-- /.form-group -->
+
+                <h5 class="question">¿Est&aacute; usted inscrito en el Colegio de Profesionales de Inform&aacute;tica y Computaci&oacute;n? *</h5>
+                <div class="form-group">
+
+                  <input type="radio" id="cpic-yes" name="cpic" ng-model="cpic" ng-required="!cpic" value="Si">
+                  <label for="cpic-yes">Si</label>
+                  <br>
+                  <input type="radio" id="cpic-no" name="cpic" ng-model="cpic" ng-required="!cpic" value="No">
+                  <label for="cpic-no">No</label>
+
+                  <p ng-show="respondent.cpic.$invalid && !respondent.cpic.$pristine" class="help-block">Campo Requerido.</p>
+
+                </div>
+                <!-- /.form-group -->
+
+                <h5 class="question">¿Estar&iacute;a usted de acuerdo en que el Colegio de Profesionales en Inform&aacute;tica y Computaci&oacute;n (CPIC) obligue por ley a que todo profesional est&eacute; afiliado al colegio? *</h5>
+                <div class="form-group">
+
+                  <input type="radio" id="agree-yes" name="agree"  ng-model="agree" ng-required="!agree" value="Si">
+                  <label for="agree-yes">Si</label>
+                  <br>
+                  <input type="radio" id="agree-no" name="agree"  ng-model="agree" ng-required="!agree" value="No">
+                  <label for="agree-no">No</label>
+
+                </div>
+                <!-- /.form-group -->
+
+                <hr>
+
+                <div class="alert alert-info">
+                  <p>Las siguientes preguntas son opcionales y de carácter demográfico, pero nos ayudarían mucho para agrupar los resultados, esta información no será tomada individualmente ya que la encuesta es anónima.</p>
+                </div>
+
+                <h5 class="question">Nombre de la empresa/instituci&oacute;n en caso de no ser independiente</h5>
+                <div class="form-group">
+
+                  <input type="text" id="company_name" name="company_name" class="form-control" value="" placeholder="Nombre de la compa&ntilde;&iacute;a o instituci&oacute;n">
+
+                </div>
+                <!-- /.form-group -->
+
+                <h5 class="question">G&eacute;nero</h5>
+                <div class="form-group">
+
+                  <input type="radio" id="gender-male" name="gender" value="M&aacute;sculino">
+                  <label for="gender-male">M&aacute;sculino</label>
+                  <br>
+                  <input type="radio" id="gender-female" name="gender" value="Femenino">
+                  <label for="gender-female">Femenino</label>
+
+                </div>
+                <!-- /.form-group -->
+
+                <h5 class="question">Rango de edad:</h5>
+                <div class="form-group">
+
+                  <input type="radio" id="age-min" name="age" value="Menos de 18 años">
+                  <label for="age-min">Menos de 18 años</label>
+                  <br>
+                  <input type="radio" id="age-18-to-24" name="age" value="18 a 24 años">
+                  <label for="age-18-to-24">18 a 24 años</label>
+                  <br>
+                  <input type="radio" id="age-25-to-34" name="age" value="25 a 34 años">
+                  <label for="age-25-to-34">25 a 34 años</label>
+                  <br>
+                  <input type="radio" id="age-35-to-45" name="age" value="35 a 45 años">
+                  <label for="age-35-to-45">35 a 45 años</label>
+                  <br>
+                  <input type="radio" id="age-max" name="age" value="Más de 45 años">
+                  <label for="age-max">Más de 45 años</label>
+                  <br>
+
+                </div>
+                <!-- /.form-group -->
+
+                <div class="disclaimer" ng-class="{ 'incomplete' : respondent.$invalid }">
+                  <p class="text-danger">Responde los campos requeridos para enviar el formulario</p>
+                </div>
+
+                <button type="submit" class="button button-orange" id="submit-survey" ng-disabled="respondent.$invalid" ng-class="{ 'has-error' : respondent.$invalid }">
+                  Enviar
+                </button>
+
+              </fieldset>
+              <!-- /fieldset -->
+
+            </form>
+            <!-- /form -->
+
+          </div>
+          <!-- /.box-content -->
+
+          <div class="box-footer footer-orange">
+
+            <h4 class="footer-text"><i class="fa fa-check-circle-o"></i> {{totalRespondents}} Encuestados en total</h4>
+
+          </div>
+          <!-- /.box-footer -->
+
+        </div>
+        <!-- /.box -->
+
+      </div>
+      <!-- /.col -->
+
+      <div class="col-sm-6">
+
+        <div class="box">
+
+          <div class="box-header">
+
+            <h3 class="box-title">Resultados de la encuesta <span class="box-icon icon-purple"><i class="fa fa-bar-chart-o"></i></span></h3>
+
+          </div>
+          <!-- /.box-header -->
+
+          <div class="box-content">
+
+            <div id="survey-results" style="height: 250px;" results-chart></div>
+            <!-- /.survey-results -->
+
+          </div>
+          <!-- /.box-content -->
+
+          <div class="box-footer footer-purple">
+
+            <h4 class="footer-text"><i class="fa fa-ban"></i> Tendencia al rechazo del proyecto</h4>
+
+          </div>
+          <!-- /.box-footer -->
+
+        </div>
+        <!-- /.box -->
+
+        <div class="box">
+
+          <div class="box-header">
+
+            <h3 class="box-title">Likes en Facebook <a href="https://www.facebook.com/infoLibreCR" target="_blank"><span class="box-icon icon-blue"><i class="fa fa-facebook"></i></span></a></h3>
+
+          </div>
+          <!-- /.box-header -->
+
+          <div class="box-content">
+
+            <h3 class="text-center">Gran total:</h3>
+            <span class="big-number number-blue" fb-likes></span>
+
+          </div> <!-- /.box-content -->
+
+          <div class="box-footer footer-blue">
+
+            <h4 class="footer-text"><i class="fa fa-thumbs-up"></i> Primeros 2 mil en menos de 12h</h4>
+
+          </div>
+          <!-- /.box-footer -->
+
+        </div>
+        <!-- /.box -->
+
+        <div class="box">
+
+          <div class="box-header">
+
+            <h3 class="box-title">Notas en los medios <span class="box-icon icon-red"><i class="fa fa-file-text-o"></i></span></h3>
+
+          </div>
+          <!-- /.box-header -->
+
+          <div class="box-content">
+
+            <div class="well wow fadeIn">
+              <h4>Carta a Diputados: Ley Orgánica del Colegio De Profesionales en Informática Y Computación, y sus Reformas</h4>
+              <p>Respetados (as) Señores (as) Diputados,Reciban el atento saludo de la Cámara de Tecnologías de Información y Comunicación, CAMTIC, su Junta Directiva y personal administrativo.Conocedores de la existencia y discusión de los Proyectos de Ley No. 18.919 y 18.928 y por considerar que los asuntos propuestos en dichos proyectos afectan directamente...</p>
+              <a href="http://www.camtic.org/actualidad-tic/carta-a-diputados-ley-organica-del-colegio-de-profesionales-en-informatica-y-computacion-y-sus-reformas/" target="_blank" class="btn btn-danger">Leer M&aacute;s</a>
+            </div>
+
+            <div class="well wow fadeIn">
+              <h4>CAMTIC solicita rechazar y archivar proyectos de ley que impondrían colegiatura obligatoria a informáticos en Costa Rica</h4>
+              <p>El proyecto de ley que impondría la colegiatura obligatoria para profesionales de informática y computación atenta contra libertades individuales y perjudicaría seriamente el desarrollo de las tecnologías digitales en Costa Rica...</p>
+              <a href="http://www.camtic.org/actualidad-tic/camtic-solicita-rechazar-y-archivar-proyectos-de-ley-que-impondrian-colegiatura-obligatoria-a-informaticos-en-costa-rica/" target="_blank" class="btn btn-danger">Leer M&aacute;s</a>
+            </div>
+
+            <div class="well wow fadeIn">
+              <h4>Proyecto de Reforma de la ley 7537 por el CPIC</h4>
+              <p>omo ha sido de su conocimiento, el CPIC impulsa una reforma a su Ley 7537 y a partir de la misma han circulado una serie de aseveraciones, que desde el tono del proyecto no son compatibles con la verdad que el objetivo del proyecto y el CPIC... </p>
+              <a href="http://www.cpic.or.cr/estatutos/proyecto-de-reforma-de-ley-7537/" target="_blank" class="btn btn-danger">Leer M&aacute;s</a>
+            </div>
+
+            <div class="well wow fadeIn">
+              <h4>MICITT considera “no prudentes” iniciativas que colegiaría a informáticos</h4>
+              <p>Los Proyectos 18919 y 18928 que pretenden reformas a la Ley Orgánica del Colegio de Profesionales en Informática y Computación (CPIC) y los cuales han provocado el rechazo y oposición de los Informáticos fueron considerados “no prudentes”...</p>
+              <a href="http://www.crhoy.com/micitt-considera-no-prudentes-iniciativas-que-colegiaria-a-informaticos/" target="_blank" class="btn btn-danger">Leer M&aacute;s</a>
+            </div>
+
+            <div class="well wow fadeIn">
+              <h5><a href="http://www.profesional.co.cr/es/2014/06/30/proyecto-ley-obligatoriedad-cpic-costa-rica/" target="_blank">Sobre la ley de obligatoriedad a colegiarse al CPIC</a></h5>
+              <h5><a href="http://www.crhoy.com/informaticos-se-oponen-a-proyectos-de-ley-que-pretenden-colegiarlos/" target="_blank">Informáticos se oponen a Proyectos de Ley que pretenden colegiarlos</a></h5>
+              <h5><a href="http://www.elfinancierocr.com/blogs/por_la_libre/Nefastos-proyectos-ley-informaticos_7_547815217.html" target="_blank">Nefastos proyectos de ley contra informáticos</a></h5>
+            </div>
+
+          </div>
+          <!-- /.box-content -->
+
+          <div class="box-footer footer-red">
+
+            <h4 class="footer-text"><i class="fa fa-info-circle"></i> Mantengase Informado</h4>
+
+          </div>
+          <!-- /.box-content -->
+
+        </div> <!-- /.box -->
+
+      </div>
+      <!-- /.col -->
+
+      </div>
+      <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+</div>
+<!-- /.survey -->

@@ -1,0 +1,135 @@
+.survey-holder {
+  margin: 50px 0;
+
+  > .container {
+
+    > .row {
+
+      > [class^=col-] {
+
+        > .box:last-child {
+
+          @media (min-width: $screen-xs-max) {
+            margin: 0;
+          }
+        }
+
+        &.separator-line-left {
+          border-left: 4px solid darken($clouds, 3%);
+        }
+
+        &.separator-line-right {
+          border-right: 4px solid darken($clouds, 3%);
+        }
+
+        &:first-child {
+
+          .box {
+            position: relative;
+
+            .survey {
+              padding: 10px;
+              background: lighten($clouds, 5%);
+              border-radius: 3px;
+
+              .question {
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 20px;
+              }
+
+              label {
+                font-weight: normal;
+              }
+
+              #submit-survey {
+                float: right;
+              }
+            }
+
+            &:after {
+              content: '';
+              height: 0;
+              width: 0;
+              position: absolute;
+              top: 50%;
+              right: -22px;
+              margin-top: -12px;
+              border: solid transparent;
+              border-color: rgba(255, 255, 255, 0);
+              border-left-color: $white;
+              border-width: 12px;
+              z-index: 100;
+
+              @media (max-width: $screen-xs-max) {
+                display: none;
+              }
+            }
+
+            &:before {
+              content: '';
+              height: 10px;
+              width: 10px;
+              position: absolute;
+              top: 50%;
+              right: -22px;
+              background: lighten($nephritis, 10%);
+              border: 1px solid $white;
+              border-radius: 50%;
+              margin-top: -5px;
+              z-index: 100;
+
+              @media (max-width: $screen-xs-max) {
+                display: none;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+
+          .box {
+            position: relative;
+
+            &:after {
+              content: '';
+              height: 0;
+              width: 0;
+              position: absolute;
+              top: 50%;
+              left: -22px;
+              margin-top: -12px;
+              border: solid transparent;
+              border-color: rgba(255, 255, 255, 0);
+              border-right-color: $white;
+              border-width: 12px;
+              z-index: 10;
+
+              @media (max-width: $screen-xs-max) {
+                display: none;
+              }
+            }
+
+            &:before {
+              content: '';
+              height: 10px;
+              width: 10px;
+              position: absolute;
+              top: 50%;
+              left: -22px;
+              background: lighten($nephritis, 10%);
+              border: 1px solid $white;
+              border-radius: 50%;
+              margin-top: -5px;
+              z-index: 10;
+
+              @media (max-width: $screen-xs-max) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

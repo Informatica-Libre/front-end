@@ -1,0 +1,35 @@
+/* Areas
+-------------------------------------------------- */
+.areas {
+  padding: 50px 0 30px;
+  background: $light-grey;
+  margin-bottom: 0;
+
+  .areas-intro {
+    margin-bottom: 50px;
+
+    .areas-headline {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+  }
+
+  .container {
+
+    .row {
+
+      .area {
+        padding: 15px 0;
+        background: $medium-grey;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 20px;
+
+        .area-title {
+          font-family: 'Open Sans Condensed';
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+/* Testimonials
+-------------------------------------------------- */
+.testimonials {
+  background: $orange;
+  margin-bottom: 0;
+
+  .container  {
+    position: relative;
+
+    .testimonial-headline {
+      color: $white;
+      font-weight: bold;
+      font-size: 53px;
+    }
+
+    .testimonial-name {
+      font-family: 'Open Sans Condensed';
+      font-weight: bold;
+      color: $white;
+    }
+
+    .testimonial-text {
+      color: $white;
+      font-family: 'Open Sans Condensed';
+    }
+
+    .testimonial-image {
+      position: absolute;
+      bottom: -48px;
+      right: 0;
+    }
+
+    .btn {
+      text-transform: uppercase;
+      padding: 20px;
+    }
+  }
+}

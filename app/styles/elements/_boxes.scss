@@ -1,0 +1,113 @@
+/* Boxes
+-------------------------------------------------- */
+
+.box {
+  background: $white;
+  border-radius: 3px;
+  margin-bottom: 25px;
+
+  .box-header {
+    overflow: hidden;
+    padding: 20px 10px 10px;
+
+    .box-title {
+      margin: 0;
+      border-bottom: 1px solid $clouds;
+      padding-bottom: 20px;
+      position: relative;
+
+      .box-icon {
+        background: $silver;
+        color: $white;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        top: -8px;
+        right: 0;
+        overflow: hidden;
+
+        &.icon-orange {
+          background: $orange;
+        }
+
+        &.icon-red {
+          background: $alizarin;
+        }
+
+        &.icon-blue {
+          background: $river;
+        }
+
+        &.icon-green {
+          background: $nephritis;
+        }
+
+        &.icon-purple {
+          background: $amethyst;
+        }
+      }
+    }
+  }
+
+  .box-content {
+    padding: 10px;
+
+    .big-number {
+      display: block;
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      margin: 10px 0;
+
+      &.number-orange {
+        color: $orange;
+      }
+
+      &.number-red {
+        color: $alizarin;
+      }
+
+      &.number-blue {
+        color: $river;
+      }
+
+      &.number-green {
+        color: $nephritis;
+      }
+
+      &.number-purple {
+        color: $amethyst;
+      }
+    }
+  }
+
+  .box-footer {
+    background: $silver;
+    color: $white;
+    padding: 10px;
+    border-radius: 0 0 3px 3px;
+
+    &.footer-orange {
+      background: $orange;
+    }
+
+    &.footer-red {
+      background: $alizarin;
+    }
+
+    &.footer-blue {
+      background: $river;
+    }
+
+    &.footer-green {
+      background: $nephritis;
+    }
+
+    &.footer-purple {
+      background: $amethyst;
+    }
+  }
+}
