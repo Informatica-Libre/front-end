@@ -50,6 +50,38 @@
                 </div>
                 <!-- /.form-group -->
 
+                <h5 class="question">Area de desarrollo de su profesión *</h5>
+                <div class="form-group">
+
+                  <input type="radio" id="telematic" name="area" ng-model="area" ng-required="!area" value="Telemática">
+                  <label for="telematic">Telem&aacute;tica</label>
+                  <br>
+                  <input type="radio" id="coding" name="area" ng-model="area" ng-required="!area" value="Programación / QA">
+                  <label for="coding">Programaci&oacute;n / QA</label>
+                  <br>
+                  <input type="radio" id="db" name="area" ng-model="area" ng-required="!area" value="Bases de Datos">
+                  <label for="db">Bases de Datos</label>
+                  <br>
+                  <input type="radio" id="support" name="area" ng-model="area" ng-required="!area" value="Soporte Técnico">
+                  <label for="support">Soporte T&eacute;cnico</label>
+                  <br>
+                  <input type="radio" id="servers" name="area" ng-model="area" ng-required="!area" value="Infraestructura">
+                  <label for="servers">Infraestructura</label>
+                  <br>
+                  <input type="radio" id="robotics" name="area" ng-model="area" ng-required="!area" value="Robótica">
+                  <label for="robotics">Rob&oacute;tica</label>
+                  <br>
+                  <input type="radio" id="web" name="area" ng-model="area" ng-required="!area" value="Web">
+                  <label for="web">Web</label>
+                  <br>
+                  <input type="radio" id="other-area" name="area" ng-model="area" ng-required="!area" value="Otra">
+                  <label for="other-area">Otra</label>
+
+                  <p ng-show="respondent.degree.$invalid && !respondent.degree.$pristine" class="help-block">Campo Requerido.</p>
+
+                </div>
+                <!-- /.form-group -->
+
                 <h5 class="question">Tiene certificaciones del tipo de Oracle, Zend, Cisco, etc *</h5>
                 <div class="form-group">
 
@@ -180,6 +212,19 @@
                 </div>
                 <!-- /.form-group -->
 
+                <h5 class="question">Escriba su testimonio:</h5>
+                <div class="form-group">
+
+                  <textarea id="testimonial" name="testimonial" class="form-control" value=""></textarea>
+
+                  <label for="share-testimonial" class="share-testimonial">
+                    <input id="share-testimonial" type="checkbox" value="share testimonial"/>
+                    Autorizo publicar mi testimonio.
+                  </label>
+
+                </div>
+                <!-- /.form-group -->
+
                 <div class="disclaimer" ng-class="{ 'incomplete' : respondent.$invalid }">
                   <p class="text-danger">Responde los campos requeridos para enviar el formulario</p>
                 </div>
@@ -276,31 +321,31 @@
 
           <div class="box-content">
 
-            <div class="well wow fadeIn">
+            <div class="well">
               <h4>Carta a Diputados: Ley Orgánica del Colegio De Profesionales en Informática Y Computación, y sus Reformas</h4>
               <p>Respetados (as) Señores (as) Diputados,Reciban el atento saludo de la Cámara de Tecnologías de Información y Comunicación, CAMTIC, su Junta Directiva y personal administrativo.Conocedores de la existencia y discusión de los Proyectos de Ley No. 18.919 y 18.928 y por considerar que los asuntos propuestos en dichos proyectos afectan directamente...</p>
               <a href="http://www.camtic.org/actualidad-tic/carta-a-diputados-ley-organica-del-colegio-de-profesionales-en-informatica-y-computacion-y-sus-reformas/" target="_blank" class="btn btn-danger">Leer M&aacute;s</a>
             </div>
 
-            <div class="well wow fadeIn">
+            <div class="well">
               <h4>CAMTIC solicita rechazar y archivar proyectos de ley que impondrían colegiatura obligatoria a informáticos en Costa Rica</h4>
               <p>El proyecto de ley que impondría la colegiatura obligatoria para profesionales de informática y computación atenta contra libertades individuales y perjudicaría seriamente el desarrollo de las tecnologías digitales en Costa Rica...</p>
               <a href="http://www.camtic.org/actualidad-tic/camtic-solicita-rechazar-y-archivar-proyectos-de-ley-que-impondrian-colegiatura-obligatoria-a-informaticos-en-costa-rica/" target="_blank" class="btn btn-danger">Leer M&aacute;s</a>
             </div>
 
-            <div class="well wow fadeIn">
+            <div class="well">
               <h4>Proyecto de Reforma de la ley 7537 por el CPIC</h4>
               <p>omo ha sido de su conocimiento, el CPIC impulsa una reforma a su Ley 7537 y a partir de la misma han circulado una serie de aseveraciones, que desde el tono del proyecto no son compatibles con la verdad que el objetivo del proyecto y el CPIC... </p>
               <a href="http://www.cpic.or.cr/estatutos/proyecto-de-reforma-de-ley-7537/" target="_blank" class="btn btn-danger">Leer M&aacute;s</a>
             </div>
 
-            <div class="well wow fadeIn">
+            <div class="well">
               <h4>MICITT considera “no prudentes” iniciativas que colegiaría a informáticos</h4>
               <p>Los Proyectos 18919 y 18928 que pretenden reformas a la Ley Orgánica del Colegio de Profesionales en Informática y Computación (CPIC) y los cuales han provocado el rechazo y oposición de los Informáticos fueron considerados “no prudentes”...</p>
               <a href="http://www.crhoy.com/micitt-considera-no-prudentes-iniciativas-que-colegiaria-a-informaticos/" target="_blank" class="btn btn-danger">Leer M&aacute;s</a>
             </div>
 
-            <div class="well wow fadeIn">
+            <div class="well">
               <h5><a href="http://www.profesional.co.cr/es/2014/06/30/proyecto-ley-obligatoriedad-cpic-costa-rica/" target="_blank">Sobre la ley de obligatoriedad a colegiarse al CPIC</a></h5>
               <h5><a href="http://www.crhoy.com/informaticos-se-oponen-a-proyectos-de-ley-que-pretenden-colegiarlos/" target="_blank">Informáticos se oponen a Proyectos de Ley que pretenden colegiarlos</a></h5>
               <h5><a href="http://www.elfinancierocr.com/blogs/por_la_libre/Nefastos-proyectos-ley-informaticos_7_547815217.html" target="_blank">Nefastos proyectos de ley contra informáticos</a></h5>
