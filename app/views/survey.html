@@ -51,6 +51,9 @@
               <fieldset>
 
                 <h5 class="question">M&aacute;ximo grado acad&eacute;mico obtenido *</h5>
+
+                <p ng-show="respondent.degree.$invalid && !respondent.degree.$pristine" class="help-block">Campo Requerido.</p>
+
                 <div class="form-group">
 
                   <input type="radio" id="degree-no" name="degree" ng-model="degree" ng-required="!degree" value="No posee ning&uacute;n grado acad&eacute;mico">
@@ -68,12 +71,13 @@
                   <input type="radio" id="degree-completed" name="degree" ng-model="degree" ng-required="!degree" value="Bachillerato completo en inform&aacute;tica/sistemas">
                   <label for="degree-completed">Bachillerato completo en inform&aacute;tica/sistemas</label>
 
-                  <p ng-show="respondent.degree.$invalid && !respondent.degree.$pristine" class="help-block">Campo Requerido.</p>
-
                 </div>
                 <!-- /.form-group -->
 
                 <h5 class="question">Area de desarrollo de su profesión *</h5>
+
+                <p ng-show="respondent.area.$invalid && !respondent.area.$pristine" class="help-block">Campo Requerido.</p>
+
                 <div class="form-group">
 
                   <input type="radio" id="telematic" name="area" ng-model="area" ng-required="!area" value="Telemática">
@@ -100,12 +104,13 @@
                   <input type="radio" id="other-area" name="area" ng-model="area" ng-required="!area" value="Otra">
                   <label for="other-area">Otra</label>
 
-                  <p ng-show="respondent.degree.$invalid && !respondent.degree.$pristine" class="help-block">Campo Requerido.</p>
-
                 </div>
                 <!-- /.form-group -->
 
                 <h5 class="question">Tiene certificaciones del tipo de Oracle, Zend, Cisco, etc *</h5>
+
+                <p ng-show="respondent.certification.$invalid && !respondent.certification.$pristine" class="help-block">Campo Requerido.</p>
+
                 <div class="form-group">
 
                   <input type="radio" id="certification-yes" name="certification" ng-model="certification" ng-required="!certification" value="Si">
@@ -114,12 +119,13 @@
                   <input type="radio" id="certification-no" name="certification" ng-model="certification" ng-required="!certification" value="No">
                   <label for="certification-no">No</label>
 
-                  <p ng-show="respondent.certification.$invalid && !respondent.certification.$pristine" class="help-block">Campo Requerido.</p>
-
                 </div>
                 <!-- /.form-group -->
 
                 <h5 class="question">Laboralmente es usted: *</h5>
+
+                <p ng-show="respondent.employment.$invalid && !respondent.employment.$pristine" class="help-block">Campo Requerido.</p>
+
                 <div class="form-group">
 
                   <input type="radio" id="employment-public" name="employment" ng-model="employment" ng-required="!employment" value="Empleado del sector p&uacute;blico">
@@ -130,14 +136,14 @@
                   <br>
                   <input type="radio" id="employment-own" name="employment" ng-model="employment" ng-required="!employment" value="Negocio propio/trabajador independiente">
                   <label for="employment-own">Negocio propio/trabajador independiente</label>
-                  <br>
-
-                  <p ng-show="respondent.employment.$invalid && !respondent.employment.$pristine" class="help-block">Campo Requerido.</p>
 
                 </div>
                 <!-- /.form-group -->
 
                 <h5 class="question">Años aprox. de experiencia en el área *:</h5>
+
+                <p ng-show="respondent.experience.$invalid && !respondent.experience.$pristine" class="help-block">Campo Requerido.</p>
+
                 <div class="form-group">
 
                   <input type="radio" id="experience-min" name="experience" ng-model="experience" ng-required="!experience" value="Menos de 3 años">
@@ -154,14 +160,14 @@
                   <br>
                   <input type="radio" id="experience-max" name="experience" ng-model="experience" ng-required="!experience" value="Más de 20 años">
                   <label for="experience-max">Más de 20 años</label>
-                  <br>
-
-                  <p ng-show="respondent.experience.$invalid && !respondent.experience.$pristine" class="help-block">Campo Requerido.</p>
 
                 </div>
                 <!-- /.form-group -->
 
                 <h5 class="question">¿Est&aacute; usted inscrito en el Colegio de Profesionales de Inform&aacute;tica y Computaci&oacute;n? *</h5>
+
+                <p ng-show="respondent.cpic.$invalid && !respondent.cpic.$pristine" class="help-block">Campo Requerido.</p>
+
                 <div class="form-group">
 
                   <input type="radio" id="cpic-yes" name="cpic" ng-model="cpic" ng-required="!cpic" value="Si">
@@ -170,12 +176,13 @@
                   <input type="radio" id="cpic-no" name="cpic" ng-model="cpic" ng-required="!cpic" value="No">
                   <label for="cpic-no">No</label>
 
-                  <p ng-show="respondent.cpic.$invalid && !respondent.cpic.$pristine" class="help-block">Campo Requerido.</p>
-
                 </div>
                 <!-- /.form-group -->
 
                 <h5 class="question">¿Estar&iacute;a usted de acuerdo en que el Colegio de Profesionales en Inform&aacute;tica y Computaci&oacute;n (CPIC) obligue por ley a que todo profesional est&eacute; afiliado al colegio? *</h5>
+
+                <p ng-show="respondent.agree.$invalid && !respondent.agree.$pristine" class="help-block">Campo Requerido.</p>
+
                 <div class="form-group">
 
                   <input type="radio" id="agree-yes" name="agree"  ng-model="agree" ng-required="!agree" value="Si">
@@ -273,7 +280,7 @@
                 <hr/>
 
                 <div class="disclaimer" ng-class="{ 'incomplete' : respondent.$invalid }">
-                  <p class="text-danger">Responde los campos requeridos para enviar el formulario</p>
+                  <p>Responde los campos requeridos para enviar el formulario</p>
                 </div>
 
                 <button type="submit" class="button button-orange" id="submit-survey" ng-disabled="respondent.$invalid" ng-class="{ 'has-error' : respondent.$invalid }">

@@ -55,6 +55,14 @@
                 margin-top: 10px;
               }
 
+              .disclaimer.incomplete {
+                float: left;
+                font-size: 11px;
+                color: $gray;
+                font-style: italic;
+                text-decoration: underline;
+              }
+
               #submit-survey {
                 float: right;
               }
