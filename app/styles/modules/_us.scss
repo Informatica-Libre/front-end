@@ -45,6 +45,58 @@
 
     .social {
       margin-top: 30px;
+
+      a {
+        display: inline-block;
+        margin: 0 20px;
+        border-radius: 2px;
+        width: 77px;
+
+        &.mail {
+          background: $grey;
+          border: 1px solid $grey;
+
+          &:hover {
+            background: $white;
+
+            i {
+              color: $grey;
+            }
+          }
+        }
+
+        &.facebook {
+          background: #4c66a4;
+          border: 1px solid #4c66a4;
+
+          &:hover {
+            background: $white;
+
+            i {
+              color: #4c66a4;
+            }
+          }
+        }
+
+        &.twitter {
+          background: #55acee;
+          border: 1px solid #55acee;
+
+          &:hover {
+            background: $white;
+            border: 1px solid #55acee;
+
+            i {
+              color: #55acee;
+            }
+          }
+        }
+
+        i {
+          font-size: 45px;
+          color: white;
+        }
+      }
     }
 
     .colaborators-title {
