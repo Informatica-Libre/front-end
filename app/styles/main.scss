@@ -30,8 +30,8 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 /* Modules
 -------------------------------------------------- */
 @import 'modules/intro';
-@import 'modules/areas';
-@import 'modules/featred-testimonial';
+@import 'modules/featured-testimonial';
+@import 'modules/content';
 @import 'modules/survey';
 @import 'modules/us';
 
@@ -42,6 +42,7 @@ body {
   background: $light-grey;
   font-family: 'Open Sans';
   color: $grey;
+  font-size: 16px;
 }
 
 
