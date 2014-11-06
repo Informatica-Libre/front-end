@@ -1,2 +1,17 @@
 /* Footer
 -------------------------------------------------- */
+.footer {
+  margin-top: 30px;
+  padding: 20px 0;
+  background: $blue;
+  text-align: center;
+
+  p {
+    color: $white;
+    font-size: 12px;
+  }
+
+  .logos {
+    margin-top: 20px;
+  }
+}
