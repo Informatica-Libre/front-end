@@ -37,11 +37,13 @@
     blockquote {
       font-family: Georgia, serif;
       font-size: 18px;
+      color: lighten($grey, 8%);
       font-style: italic;
       margin: 0;
       position: relative;
       z-index: 600;
       border: 0;
+      text-align: center;
 
       p {
 
@@ -52,9 +54,23 @@
           font-weight: 700;
           opacity: .3;
           position: absolute;
-          top: -.4em;
+          top: 5px;
+          padding-right: 10px;
           left: -.2em;
           z-index: -300;
+        }
+
+        &:after {
+          content: '\201D';
+          color: $orange;
+          font-size: 60px;
+          font-weight: 700;
+          opacity: .3;
+          position: absolute;
+          top: 5px;
+          right: -13px;
+          z-index: 300;
+          padding-right: 10px;
         }
       }
     }
