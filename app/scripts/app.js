@@ -51,6 +51,11 @@ angular
       $location.hash($routeParams.section);
       $anchorScroll();
 
+      // Horrible Scroll hack for Fixed Header
+      setTimeout(function(){
+        window.scrollTo(window.pageXOffset, window.pageYOffset - 25);
+      },10);
+
     });
 
   });
