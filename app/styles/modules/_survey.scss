@@ -65,6 +65,10 @@
 
               #submit-survey {
                 float: right;
+
+                &.has-error{
+                  display:none;
+                }
               }
             }
 
