@@ -358,6 +358,11 @@ module.exports = function (grunt) {
           cwd: '.',
           src: 'bower_components/font-awesome/fonts/*',
           dest: '<%= yeoman.dist %>'
+        }, {
+          expand: true,
+          cwd: '.',
+          src: 'bower_components/morrisjs/morris.css',
+          dest: '<%= yeoman.dist %>'
         }]
       },
       styles: {
