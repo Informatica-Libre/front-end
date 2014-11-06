@@ -12,23 +12,45 @@
       color: $white;
       font-weight: bold;
       font-size: 53px;
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 30px;
+      }
     }
 
     .intro-subtitle {
       font-family: 'Open Sans Condensed';
       font-weight: bold;
       color: $white;
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 26px;
+      }
     }
 
     .intro-text {
       color: $white;
       font-family: 'Open Sans Condensed';
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 16px;
+      }
     }
 
     .btn {
       margin-top: 20px;
       padding: 20px;
       text-transform: uppercase;
+    }
+
+    .more-info {
+      display: block;
+      color: $white;
+
+      &:hover {
+        text-decoration: none;
+        color: $orange;
+      }
     }
   }
 }
