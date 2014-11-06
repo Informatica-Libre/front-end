@@ -14,7 +14,7 @@
       font-size: 53px;
 
       @media (max-width: $screen-xs-max) {
-        font-size: 30px;
+        font-size: 22px;
       }
     }
 
@@ -24,7 +24,7 @@
       color: $white;
 
       @media (max-width: $screen-xs-max) {
-        font-size: 26px;
+        font-size: 20px;
       }
     }
 
@@ -41,6 +41,10 @@
       margin-top: 20px;
       padding: 20px;
       text-transform: uppercase;
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 14px;
+      }
     }
 
     .more-info {

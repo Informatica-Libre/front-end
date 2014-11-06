@@ -11,6 +11,10 @@
     .areas-headline {
       font-weight: bold;
       margin-bottom: 30px;
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 30px;
+      }
     }
   }
 
@@ -28,6 +32,10 @@
         .area-title {
           font-family: 'Open Sans Condensed';
           font-weight: bold;
+
+          @media (max-width: $screen-xs-max) {
+            font-size: 18px;
+          }
         }
       }
     }

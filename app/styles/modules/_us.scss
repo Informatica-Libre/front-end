@@ -27,10 +27,18 @@
           font-family: 'Open Sans Condensed';
           font-weight: bold;
           color: $white;
+
+          @media (max-width: $screen-xs-max) {
+            font-size: 18px;
+          }
         }
 
         .person-role {
           color: $white;
+
+          @media (max-width: $screen-xs-max) {
+            font-size: 14px;
+          }
         }
       }
     }

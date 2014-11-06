@@ -16,6 +16,10 @@
       padding-bottom: 20px;
       position: relative;
 
+      @media (max-width: $screen-xs-max) {
+        font-size: 18px;
+      }
+
       .box-icon {
         background: $silver;
         color: $white;
