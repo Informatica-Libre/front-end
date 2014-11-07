@@ -19,28 +19,28 @@ angular.module('informaticaLibreApp')
       restrict: 'A',
       link: function(scope, element, attrs) {
 
+        var chartData;
+
         surveyService.getReport().success(function(response) {
 
-          console.log(response);
+          // Starst the survery result graph.
+          var surveyResults = Morris.Bar({
+            element: attrs.id,
+            resize: true,
+            data: [
+              { y: 'Sin Título', a: response.values.no_title},
+              { y: 'Con Título ', a: response.values.with_title},
+              { y: 'Colegiados', a: response.values.belongs_to_cpic},
+              { y: 'Apoyan', a: response.values.agree_with_cpic},
+              { y: 'No Apoyan', a: response.values.not_agree_with_cpic}
+            ],
+            xkey: 'y',
+            xLabelMargin: 10,
+            ykeys: ['a'],
+            labels: ['Resultado'],
+            barColors: ['#9b59b6']
+          });
 
-        });
-
-        // Starst the survery result graph.
-        var surveyResults = Morris.Bar({
-          element: attrs.id,
-          resize: true,
-          data: [
-            { y: 'Sin Título', a: 100},
-            { y: 'Con Título ', a: 45},
-            { y: 'Colegiados', a: 12},
-            { y: 'Apoyan', a: 5},
-            { y: 'No Apoyan', a: 25}
-          ],
-          xkey: 'y',
-          xLabelMargin: 10,
-          ykeys: ['a'],
-          labels: ['Resultado'],
-          barColors: ['#9b59b6']
         });
 
       }

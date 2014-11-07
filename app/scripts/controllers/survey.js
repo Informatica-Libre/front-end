@@ -12,9 +12,24 @@ angular.module('informaticaLibreApp')
     
   	surveyService.getTotal().success(function(response) {
 
-  		console.log(response);
+  		$scope.totalRespondents = response.total;
 
-  		$scope.totalRespondents = response;
+  	});
+
+  	surveyService.getReport().success(function(response) {
+
+
+  		if ( response.values.not_agree_with_cpic > response.values.agree_with_cpic ) {
+
+  			$scope.tendency = 'Mayoría rechaza el proyecto'
+  			$scope.icon = 'ban'
+
+  		} else {
+
+				$scope.tendency = 'Mayoría acepta el proyecto'
+  			$scope.icon = 'check'
+
+  		}
 
   	});
 
