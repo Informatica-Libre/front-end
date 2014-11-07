@@ -8,10 +8,14 @@
  * Controller of the informaticaLibreApp
  */
 angular.module('informaticaLibreApp')
-  .controller('SurveyCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('SurveyCtrl', function ($scope, surveyService) {
+    
+  	surveyService.getTotal().success(function(response) {
+
+  		console.log(response);
+
+  		$scope.totalRespondents = response;
+
+  	});
+
   });

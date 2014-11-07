@@ -12,34 +12,36 @@
  * Directive of the informaticaLibreApp results chart
  */
 angular.module('informaticaLibreApp')
-  .directive('resultsChart', function() {
+  .directive('resultsChart', function(surveyService) {
+
     return {
+
       restrict: 'A',
       link: function(scope, element, attrs) {
 
-        console.log(attrs);
+        surveyService.getReport().success(function(response) {
 
-        if( $(element).length ){
+          console.log(response);
 
-          // Starst the survery result graph.
-          var surveyResults = Morris.Bar({
-            element: attrs.id,
-            resize: true,
-            data: [
-              { y: 'Sin Título', a: 100},
-              { y: 'Con Título ', a: 45},
-              { y: 'Colegiados', a: 12},
-              { y: 'Apoyan', a: 5},
-              { y: 'No Apoyan', a: 25}
-            ],
-            xkey: 'y',
-            xLabelMargin: 10,
-            ykeys: ['a'],
-            labels: ['Resultado'],
-            barColors: ['#9b59b6']
-          });
+        });
 
-        }
+        // Starst the survery result graph.
+        var surveyResults = Morris.Bar({
+          element: attrs.id,
+          resize: true,
+          data: [
+            { y: 'Sin Título', a: 100},
+            { y: 'Con Título ', a: 45},
+            { y: 'Colegiados', a: 12},
+            { y: 'Apoyan', a: 5},
+            { y: 'No Apoyan', a: 25}
+          ],
+          xkey: 'y',
+          xLabelMargin: 10,
+          ykeys: ['a'],
+          labels: ['Resultado'],
+          barColors: ['#9b59b6']
+        });
 
       }
     };
