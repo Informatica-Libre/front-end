@@ -12,35 +12,33 @@
 angular.module('informaticaLibreApp')
 	.factory('surveyService', ['$http', function($http) {
 
-		var surveyResult = function() {
-
-			return $http({
-				method: 'GET',
-				url: 'https://informaticalibre.herokuapp.com/reports/basic'
-			});
-
-		};
-
-		var surveyTotal = function() {
-
-			return $http({
-				method: 'GET',
-				url: 'https://informaticalibre.herokuapp.com/answer/count'
-			});
-
-		}
-
 		return {
 
 			getReport: function() {
 
-				return surveyResult();
+				return $http({
+					method: 'GET',
+					url: 'https://informaticalibre.herokuapp.com/reports/basic'
+				});
 
 			},
 
 			getTotal: function() {
 
-				return surveyTotal();
+				return $http({
+					method: 'GET',
+					url: 'https://informaticalibre.herokuapp.com/answer/count'
+				});
+
+			},
+
+			createAnswer: function(surveyData) {
+
+				return $http({
+					method: 'POST',
+					url: 'https://informaticalibre.herokuapp.com/answer/create',
+					data: surveyData
+				});
 
 			}
 

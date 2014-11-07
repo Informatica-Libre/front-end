@@ -55,12 +55,17 @@
                 margin-top: 10px;
               }
 
-              .disclaimer.incomplete {
+              .disclaimer {
+                display: none;
                 float: left;
                 font-size: 11px;
                 color: $gray;
                 font-style: italic;
                 text-decoration: underline;
+
+                &.incomplete {
+                  display: block;
+                }
               }
 
               #submit-survey {

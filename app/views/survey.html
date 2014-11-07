@@ -46,7 +46,7 @@
               <p class="text-info">* Indica campos requeridos</p>
             </div>
 
-            <form action="respondent/create" role="form" name="respondent" method="POST" class="survey" novalidate>
+            <form role="form" name="respondent" class="survey" ng-submit="submitSurvey()" novalidate>
 
               <fieldset>
 
@@ -170,11 +170,11 @@
 
                 <div class="form-group">
 
-                  <input type="radio" id="cpic-yes" name="cpic" ng-model="cpic" ng-required="!cpic" value="Si">
-                  <label for="cpic-yes">Si</label>
-                  <br>
                   <input type="radio" id="cpic-no" name="cpic" ng-model="cpic" ng-required="!cpic" value="No">
                   <label for="cpic-no">No</label>
+                  <br>
+                  <input type="radio" id="cpic-yes" name="cpic" ng-model="cpic" ng-required="!cpic" value="Si">
+                  <label for="cpic-yes">Si</label>
 
                 </div>
                 <!-- /.form-group -->
@@ -185,11 +185,11 @@
 
                 <div class="form-group">
 
-                  <input type="radio" id="agree-yes" name="agree"  ng-model="agree" ng-required="!agree" value="Si">
-                  <label for="agree-yes">Si</label>
-                  <br>
-                  <input type="radio" id="agree-no" name="agree"  ng-model="agree" ng-required="!agree" value="No">
+                  <input type="radio" id="agree-no" name="agree"  ng-model="agree" ng-required="!agree" value="false">
                   <label for="agree-no">No</label>
+                  <br>
+                  <input type="radio" id="agree-yes" name="agree"  ng-model="agree" ng-required="!agree" value="true">
+                  <label for="agree-yes">Si</label>
 
                 </div>
                 <!-- /.form-group -->
@@ -203,7 +203,7 @@
                 <h5 class="question">Nombre de la empresa/instituci&oacute;n en caso de no ser independiente</h5>
                 <div class="form-group">
 
-                  <input type="text" id="company_name" name="company_name" class="form-control" value="" placeholder="Nombre de la compa&ntilde;&iacute;a o instituci&oacute;n">
+                  <input type="text" id="company_name" name="company_name" class="form-control" value="" placeholder="Nombre de la compa&ntilde;&iacute;a o instituci&oacute;n" ng-model="company_name">
 
                 </div>
                 <!-- /.form-group -->
@@ -211,10 +211,10 @@
                 <h5 class="question">G&eacute;nero</h5>
                 <div class="form-group">
 
-                  <input type="radio" id="gender-male" name="gender" value="M&aacute;sculino">
+                  <input type="radio" id="gender-male" name="gender" ng-model="gender" value="M&aacute;sculino">
                   <label for="gender-male">M&aacute;sculino</label>
                   <br>
-                  <input type="radio" id="gender-female" name="gender" value="Femenino">
+                  <input type="radio" id="gender-female" name="gender" ng-model="gender" value="Femenino">
                   <label for="gender-female">Femenino</label>
 
                 </div>
@@ -223,19 +223,19 @@
                 <h5 class="question">Rango de edad</h5>
                 <div class="form-group">
 
-                  <input type="radio" id="age-min" name="age" value="Menos de 18 años">
+                  <input type="radio" id="age-min" name="age" ng-model="age" value="Menos de 18 años">
                   <label for="age-min">Menos de 18 años</label>
                   <br>
-                  <input type="radio" id="age-18-to-24" name="age" value="18 a 24 años">
+                  <input type="radio" id="age-18-to-24" name="age" ng-model="age" value="18 a 24 años">
                   <label for="age-18-to-24">18 a 24 años</label>
                   <br>
-                  <input type="radio" id="age-25-to-34" name="age" value="25 a 34 años">
+                  <input type="radio" id="age-25-to-34" name="age" ng-model="age" value="25 a 34 años">
                   <label for="age-25-to-34">25 a 34 años</label>
                   <br>
-                  <input type="radio" id="age-35-to-45" name="age" value="35 a 45 años">
+                  <input type="radio" id="age-35-to-45" name="age" ng-model="age" value="35 a 45 años">
                   <label for="age-35-to-45">35 a 45 años</label>
                   <br>
-                  <input type="radio" id="age-max" name="age" value="Más de 45 años">
+                  <input type="radio" id="age-max" name="age" ng-model="age" value="Más de 45 años">
                   <label for="age-max">Más de 45 años</label>
                   <br>
 
@@ -251,10 +251,10 @@
                 <h5 class="question">Escriba su testimonio</h5>
                 <div class="form-group">
 
-                  <textarea id="testimonial" name="testimonial" class="form-control" value=""></textarea>
+                  <textarea id="testimonial" name="testimonial" ng-model="testimonial" class="form-control" value=""></textarea>
 
                   <label for="share-testimonial" class="share-testimonial">
-                    <input id="share-testimonial" type="checkbox" value="share testimonial"/>
+                    <input id="share-testimonial" type="checkbox" ng-model="agree_publish" value="share testimonial"/>
                     Autorizo publicar mi testimonio.
                   </label>
 
@@ -264,7 +264,7 @@
                 <h5 class="question">Su nombre completo</h5>
                 <div class="form-group">
 
-                  <input type="text" id="full_name" name="full_name" class="form-control" value="" placeholder="Nombre Completo">
+                  <input type="text" id="full_name" name="full_name" class="form-control" value="" ng-model="name" placeholder="Nombre Completo">
 
                 </div>
                 <!-- /.form-group -->
@@ -272,7 +272,7 @@
                 <h5 class="question">N&uacute;mero de c&eacute;dula</h5>
                 <div class="form-group">
 
-                  <input type="text" id="id_number" name="id_number" class="form-control" value="" placeholder="C&eacute;dula">
+                  <input type="text" id="id_number" name="id_number" class="form-control" value="" ng-model="id_number" placeholder="C&eacute;dula">
 
                 </div>
                 <!-- /.form-group -->
@@ -283,7 +283,7 @@
                   <p>Responde los campos requeridos para enviar el formulario</p>
                 </div>
 
-                <button type="submit" class="button button-orange" id="submit-survey" ng-disabled="respondent.$invalid" ng-class="{ 'has-error' : respondent.$invalid }">
+                <button type="submit" class="button button-orange" id="submit-survey" ng-disabled="respondent.$invalid" ng-class="{ 'has-error' : respondent.$invalid }" ng-click="Submit">
                   Enviar
                 </button>
 
