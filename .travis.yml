@@ -1,8 +1,9 @@
 language: node_js
 mode_js:
-  - '0.10'
+  - '0.10.32'
 before_script:
-  - 'npm install'
   - 'bower install'
 script:
   - 'grunt build'
+notifications:
+  slack: informaticalibre:DNQlxng6rbBkDU4quSRObnnV
