@@ -1,6 +1,8 @@
 language: node_js
 mode_js:
   - '0.10.32'
+before_install:
+  - 'gem install compass'
 before_script:
   - 'bower install'
 script:
