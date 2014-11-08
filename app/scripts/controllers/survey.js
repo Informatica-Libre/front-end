@@ -100,12 +100,17 @@ angular.module('informaticaLibreApp')
   			$scope.tendency = 'Mayoría rechaza el proyecto'
   			$scope.icon = 'ban'
 
-  		} else {
+  		} else if ( response.values.not_agree_with_cpic < response.values.agree_with_cpic ) {
 
 				$scope.tendency = 'Mayoría acepta el proyecto'
   			$scope.icon = 'check'
 
-  		}
+  		} else if ( response.values.not_agree_with_cpic === response.values.agree_with_cpic )  {
+
+        $scope.tendency = 'Estamos Tablas!'
+        $scope.icon = 'meh-o'
+
+      }
 
   	});
 
