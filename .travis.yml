@@ -7,7 +7,9 @@ before_script:
   - 'bower install'
 script:
   - 'grunt build'
-after_success:
-  - 'curl -T "dist/" -u $FTP_USER:$FTP_PASS ftp://$FTP_SERVER/$FTP_PATH'
+  - 'cd dist'
+  - 'zip -r info-libre.zip .'
+  - 'curl -v --upload-file info-libre.zip -u $FTP_USER:$FTP_PASS ftp://$FTP_SERVER/$FTP_PATH/info-libre.zip'
 notifications:
+  email: false
   slack: informaticalibre:DNQlxng6rbBkDU4quSRObnnV
