@@ -1,4 +1,8 @@
 language: node_js
-node_js:
-	- 0.10
-script: 'grunt build'
+mode_js:
+	- '0.10'
+before_script:
+	- 'npm install'
+	- 'bower install'
+script:
+	- 'grunt build'
