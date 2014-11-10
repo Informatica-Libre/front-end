@@ -29,7 +29,26 @@
 
       <div class="col-sm-6">
 
-        <div class="box">
+        <div class="box" ng-show='fbAuth'>
+          
+          <div class="box-header">
+
+            <h3 class="box-title">Gracias por participar en nuestra encuesta <span class="box-icon icon-orange"><i class="fa fa-smile-o"></i></span></h3>
+
+          </div>
+          <!-- /.box-header -->
+
+          <div class="box-content">
+            
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis velit neque, ornare id laoreet a, convallis vel nibh.</p>
+
+          </div>
+          <!-- /.box-content -->
+
+        </div>
+        <!-- /.box -->
+
+        <div class="box" ng-hide='fbAuth'>
 
           <div class="box-header">
 

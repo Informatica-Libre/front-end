@@ -8,8 +8,26 @@
  * Controller of the informaticaLibreApp
  */
 angular.module('informaticaLibreApp')
-  .controller('SurveyCtrl', function ($scope, surveyService) {
+  .controller('SurveyCtrl', function ($scope, surveyService, $facebook) {
 
+
+    /**
+     * Check if the respondent has connected with facebook before. 
+     */
+    $facebook.getLoginStatus().then(function(response) {
+
+      if ( response.status === 'connected') {
+
+        $scope.fbAuth = true;
+
+      }
+
+    });
+
+
+    /**
+     * Gathers all the form data, connects user to FB and submits the survey.
+     */
     $scope.submitSurvey = function() {
 
       
@@ -18,11 +36,11 @@ angular.module('informaticaLibreApp')
        */
       if ( $scope.certification = 'No' ) {
 
-        $scope.certification = false
+        $scope.certification = false;
 
       } else {
 
-        $scope.agree = true
+        $scope.agree = true;
 
       }
 
@@ -32,11 +50,11 @@ angular.module('informaticaLibreApp')
        */
       if ( $scope.cpic = 'No' ) {
 
-        $scope.cpic = false
+        $scope.cpic = false;
 
       } else {
 
-        $scope.cpic = true
+        $scope.cpic = true;
 
       }
 
@@ -46,11 +64,11 @@ angular.module('informaticaLibreApp')
        */
       if ( $scope.agree = 'false' ) {
 
-        $scope.agree = false
+        $scope.agree = false;
 
       } else {
 
-        $scope.agree = true
+        $scope.agree = true;
 
       }
 
@@ -75,24 +93,94 @@ angular.module('informaticaLibreApp')
         testimonial: $scope.testimonial, //Testimonial - opcional
         agree_publish: $scope.agree_publish, //Si esta de acuerdo con que se publique el testimonio - opcional
         name: $scope.name, //Nombre de la persona - opcional
-        identification: $scope.id_name //ID de la persona - opcional
+        identification: $scope.id_number, //ID de la persona - opcional
+        email: false //Email del usuario
       };
 
-      surveyService.createAnswer(surveyData).success(function(response) {
+      
+      /**
+       * Check for facebook connection so the survey cannot be done multiple times.
+       */ 
+      if ( !$scope.fbAuth ) {
 
-      }).error(function(response) {
+        
+        /**
+         * Connects to facebook and requests permissions.
+         */
+        $facebook.login().then(function(response) {
 
-      });
+
+          var fbUserID = response.authResponse.userID;
+          
+          /**
+           * If the respondent approves FB connection
+           */
+          if (response.status === 'connected') {
+
+
+            /**
+             * Gest user email, profile URL, profile name & picture.
+             */
+            $facebook.api('/me').then(function(response) {
+
+              surveyData.email = response.email;
+              surveyData.facebook_profile_name = response.id;
+              surveyData.facebook_profile_url = response.link;
+              surveyData.facebook_profile_picture = 'http://graph.facebook.com/' + fbUserID + '/picture';
+
+
+              /**
+               * Sends survey data to the server.
+               */
+              surveyService.createAnswer(surveyData).success(function(response) {
+
+                console.log('Informatica Libre: ', response);
+
+              }).error(function(response) {
+
+                console.log('Informatica Libre Error: ', response);
+
+              });
+
+            }, function(error) {
+
+              console.log('Facebook API Error:', error);
+
+            });
+
+
+          } else {
+
+            console.log('User declined connection to facebook');
+
+          }
+
+
+        }, function(error) {
+
+          console.log('FB Login Error: ', error);
+
+        });
+
+      }
 
     };
     
-  	surveyService.getTotal().success(function(response) {
+  	
+    /**
+     * Gets total amount of respondents.
+     */
+    surveyService.getTotal().success(function(response) {
 
   		$scope.totalRespondents = response.total;
 
   	});
 
-  	surveyService.getReport().success(function(response) {
+  	
+    /**
+     * Gets the survey results to display in the widget's footer.
+     */
+    surveyService.getReport().success(function(response) {
 
 
   		if ( response.values.not_agree_with_cpic > response.values.agree_with_cpic ) {
