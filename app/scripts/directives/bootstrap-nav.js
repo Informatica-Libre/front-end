@@ -18,7 +18,11 @@ angular.module('informaticaLibreApp')
         
         $(element).find('.navbar-nav li a').on('click', function() {
             
-          $('.navbar-toggle').click();
+          if ( window.innerWidth <= 767 ) {
+
+            $('.navbar-toggle').click();
+
+          }
         
         });
 
