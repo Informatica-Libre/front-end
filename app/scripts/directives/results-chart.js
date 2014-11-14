@@ -29,7 +29,7 @@ angular.module('informaticaLibreApp')
             resize: true,
             data: [
               { y: 'Sin Título', a: response.values.no_title},
-              { y: 'Con Título ', a: response.values.with_title},
+              { y: 'Con Título', a: response.values.with_title},
               { y: 'Colegiados', a: response.values.belongs_to_cpic},
               { y: 'Apoyan', a: response.values.agree_with_cpic},
               { y: 'No Apoyan', a: response.values.not_agree_with_cpic}
@@ -38,7 +38,36 @@ angular.module('informaticaLibreApp')
             xLabelMargin: 10,
             ykeys: ['a'],
             labels: ['Resultado'],
-            barColors: ['#9b59b6']
+
+            // barColors: ['#9b59b6']
+            
+            // Added function to manage a different color in every single column. @alexramirez
+            barColors: function(row, series, type){
+                switch(row.label){
+                  case 'No Apoyan':
+                    return '#D45538';
+                    break;
+
+                  case 'Sin Título':
+                    return '#9359BB';
+                    break;
+
+                  case 'Con Título': 
+                    return '#E4A000';
+                    break;
+
+                  case 'Colegiados':
+                    return '#5895E0';
+                    break;
+
+                  case 'Apoyan':
+                    return '#9b59b6';
+                    break;
+
+                  default:
+                    return '#9b59b6';
+                }
+            }
           });
 
         });
