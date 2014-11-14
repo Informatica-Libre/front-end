@@ -49,19 +49,19 @@ angular.module('informaticaLibreApp')
                     break;
 
                   case 'Sin Título':
-                    return '#9359BB';
-                    break;
-
-                  case 'Con Título': 
-                    return '#E4A000';
-                    break;
-
-                  case 'Colegiados':
                     return '#5895E0';
                     break;
 
+                  case 'Con Título': 
+                    return '#5895E0';
+                    break;
+
+                  case 'Colegiados':
+                    return '#E4A000';
+                    break;
+
                   case 'Apoyan':
-                    return '#9b59b6';
+                    return '#D45538';
                     break;
 
                   default:
