@@ -29,7 +29,7 @@ angular.module('informaticaLibreApp')
      *  Watch for changes in $scope.degree to disable $scope.cpic input
      */
     $scope.$watch('degree',function(){
-      if($scope.degree=="No posee ningún grado académico" || $scope.degree=="Posee técnico o diplomado"){
+      if($scope.degree == "No posee ningún grado académico" || $scope.degree == "Posee técnico o diplomado" || $scope.degree == "Bachillerato incompleto en informática"){
         $scope.cpic = "No";
         $scope.cpicInputDisabled = true;
       } else {
