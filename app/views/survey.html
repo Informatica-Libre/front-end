@@ -225,7 +225,7 @@
                 <h5 class="question">Nombre de la empresa/instituci&oacute;n en caso de no ser independiente</h5>
                 <div class="form-group">
 
-                  <input type="text" id="company_name" name="company_name" class="form-control" value="" placeholder="Nombre de la compa&ntilde;&iacute;a o instituci&oacute;n" ng-model="company_name">
+                  <input type="text" id="company_name" name="company_name" class="form-control" value="" placeholder="Nombre de la compa&ntilde;&iacute;a o instituci&oacute;n" ng-model="company_name" input-Max-Length="25">
 
                 </div>
                 <!-- /.form-group -->
@@ -273,7 +273,7 @@
                 <h5 class="question">Escriba su testimonio</h5>
                 <div class="form-group">
 
-                  <textarea id="testimonial" name="testimonial" ng-model="testimonial" class="form-control" value=""></textarea>
+                  <textarea id="testimonial" name="testimonial" ng-model="testimonial" class="form-control" value="" input-Max-Length="1000"></textarea>
 
                   <label for="share-testimonial" class="share-testimonial">
                     <input id="share-testimonial" type="checkbox" ng-model="agree_publish" value="share testimonial"/>
@@ -286,7 +286,7 @@
                 <h5 class="question">Su nombre completo</h5>
                 <div class="form-group">
 
-                  <input type="text" id="full_name" name="full_name" class="form-control" value="" ng-model="name" placeholder="Nombre Completo">
+                  <input type="text" id="full_name" name="full_name" class="form-control" value="" ng-model="name" placeholder="Nombre Completo" input-Max-Length="60">
 
                 </div>
                 <!-- /.form-group -->
@@ -294,7 +294,7 @@
                 <h5 class="question">N&uacute;mero de c&eacute;dula</h5>
                 <div class="form-group">
 
-                  <input type="text" id="id_number" name="id_number" class="form-control" value="" ng-model="id_number" placeholder="C&eacute;dula">
+                  <input type="text" id="id_number" name="id_number" class="form-control" value="" ng-model="id_number" placeholder="C&eacute;dula" input-Max-Length="15">
 
                 </div>
                 <!-- /.form-group -->
@@ -308,6 +308,12 @@
                 <button type="submit" class="button button-orange" id="submit-survey" ng-disabled="respondent.$invalid" ng-class="{ 'has-error' : respondent.$invalid }" ng-click="Submit">
                   Enviar
                 </button>
+
+                <br>
+
+                <div class="alert alert-danger" ng-show="respondent.$invalid">
+                  <p>Todavia faltan campos requeridos por completar. Nesecitas responderlos para poder enviar el formulario. Los campos requeridos tienen un * despues de su respectivo t&iacute;tulo</p>
+                </div>
 
               </fieldset>
               <!-- /fieldset -->
