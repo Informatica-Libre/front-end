@@ -77,12 +77,14 @@
 
                   <input type="radio" id="degree-no" name="degree" ng-model="degree" ng-required="!degree" value="No posee ning&uacute;n grado acad&eacute;mico">
                   <label for="degree-no">No posee ning&uacute;n grado acad&eacute;mico en informática</label>
+                  /sistemas
                   <br>
                   <input type="radio" id="degree-diploma" name="degree" ng-model="degree" ng-required="!degree" value="Posee t&eacute;cnico o diplomado">
-                  <label for="degree-diploma">Posee t&eacute;cnico o diplomado</label>
+                  <label for="degree-diploma">Posee t&eacute;cnico o diplomado en informática/sistemas</label>
                   <br>
                   <input type="radio" id="degree-incomplete" name="degree" ng-model="degree" ng-required="!degree" value="Bachillerato incompleto en inform&aacute;tica">
                   <label for="degree-incomplete">Bachillerato incompleto en inform&aacute;tica</label>
+                  /sistemas
                   <br>
                   <input type="radio" id="degree-completed" name="degree" ng-model="degree" ng-required="!degree" value="Bachillerato completo en inform&aacute;tica/sistemas">
                   <label for="degree-completed">Bachillerato completo en inform&aacute;tica/sistemas</label>
@@ -312,7 +314,7 @@
                 <br>
 
                 <div class="alert alert-danger" ng-show="respondent.$invalid">
-                  <p>Todavia faltan campos requeridos por completar. Nesecitas responderlos para poder enviar el formulario. Los campos requeridos tienen un * despues de su respectivo t&iacute;tulo</p>
+                  <p>No se han completado todos los campos requeridos. Los campos requeridos tienen un * contiguo a su t&iacute;tulo</p>
                 </div>
 
               </fieldset>
