@@ -25,6 +25,20 @@ angular.module('informaticaLibreApp')
     });
 
 
+    /*
+     *  Watch for changes in $scope.degree to disable $scope.cpic input
+     */
+    $scope.$watch('degree',function(){
+      if($scope.degree=="No posee ningún grado académico" || $scope.degree=="Posee técnico o diplomado"){
+        $scope.cpic = "No";
+        $scope.cpicInputDisabled = true;
+      } else {
+        $scope.cpic = undefined;
+        $scope.cpicInputDisabled = false;
+      }
+    });
+
+
     /**
      * Gathers all the form data, connects user to FB and submits the survey.
      */
@@ -71,7 +85,6 @@ angular.module('informaticaLibreApp')
         $scope.agree = true;
 
       }
-
 
       /**
        * Creates the survey answer object.
