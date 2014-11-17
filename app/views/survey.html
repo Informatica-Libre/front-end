@@ -147,7 +147,9 @@
                 <p ng-show="respondent.employment.$invalid && !respondent.employment.$pristine" class="help-block">Campo Requerido.</p>
 
                 <div class="form-group">
-
+				  <input type="radio" id="employment-none" name="employment" ng-model="employment" ng-required="!employment" value="Desempleado">
+                  <label for="employment-none">Desempleado</label>
+                  <br>
                   <input type="radio" id="employment-public" name="employment" ng-model="employment" ng-required="!employment" value="Empleado del sector p&uacute;blico">
                   <label for="employment-public">Empleado del sector p&uacute;blico</label>
                   <br>
