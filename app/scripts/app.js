@@ -18,6 +18,21 @@ angular
     'ngTouch',
     'ngFacebook'
   ])
+  .directive('inputMaxLength', function ($parse) {
+    return function (scope, element, attr) {
+        element.bind('keydown keypress', function (event) {
+          if(typeof event.target.value == 'string'){
+            if (event.target.value.length >= attr.inputMaxLength && (event.which !== 8 && event.which !== 46)) {
+                  event.preventDefault();
+              } 
+          } else {
+            if (String(event.target.value).length >= attr.inputMaxLength && (event.which !== 8 && event.which !== 46)) {
+                  event.preventDefault();
+              } 
+          }
+        });
+    };
+  })
   .config(function ($routeProvider, $httpProvider, $facebookProvider) {
 
     //Enable cross domain calls

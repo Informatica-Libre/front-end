@@ -76,16 +76,20 @@
                 <div class="form-group">
 
                   <input type="radio" id="degree-no" name="degree" ng-model="degree" ng-required="!degree" value="No posee ning&uacute;n grado acad&eacute;mico">
-                  <label for="degree-no">No posee ning&uacute;n grado acad&eacute;mico en informática</label>
+                  <label for="degree-no">No posee ning&uacute;n grado acad&eacute;mico en informática</label>/sistemas
                   <br>
                   <input type="radio" id="degree-diploma" name="degree" ng-model="degree" ng-required="!degree" value="Posee t&eacute;cnico o diplomado">
-                  <label for="degree-diploma">Posee t&eacute;cnico o diplomado</label>
+                  <label for="degree-diploma">Posee t&eacute;cnico o diplomado en informática/sistemas</label>
                   <br>
                   <input type="radio" id="degree-incomplete" name="degree" ng-model="degree" ng-required="!degree" value="Bachillerato incompleto en inform&aacute;tica">
                   <label for="degree-incomplete">Bachillerato incompleto en inform&aacute;tica</label>
+                  /sistemas
                   <br>
                   <input type="radio" id="degree-completed" name="degree" ng-model="degree" ng-required="!degree" value="Bachillerato completo en inform&aacute;tica/sistemas">
                   <label for="degree-completed">Bachillerato completo en inform&aacute;tica/sistemas</label>
+                  <br>
+                  <input type="radio" id="degree-completed" name="degree" ng-model="degree" ng-required="!degree" value="Posgrado en inform&aacute;tica/sistemas">
+                  <label for="degree-completed">Posgrado en inform&aacute;tica/sistemas</label>
 
                 </div>
                 <!-- /.form-group -->
@@ -189,10 +193,10 @@
 
                 <div class="form-group">
 
-                  <input type="radio" id="cpic-no" name="cpic" ng-model="cpic" ng-required="!cpic" value="No">
+                  <input type="radio" id="cpic-no" name="cpic" ng-model="cpic" ng-required="!cpic" value="No" ng-disabled="cpicInputDisabled">
                   <label for="cpic-no">No</label>
                   <br>
-                  <input type="radio" id="cpic-yes" name="cpic" ng-model="cpic" ng-required="!cpic" value="Si">
+                  <input type="radio" id="cpic-yes" name="cpic" ng-model="cpic" ng-required="!cpic" value="Si" ng-disabled="cpicInputDisabled">
                   <label for="cpic-yes">Si</label>
 
                 </div>
@@ -222,7 +226,7 @@
                 <h5 class="question">Nombre de la empresa/instituci&oacute;n en caso de no ser independiente</h5>
                 <div class="form-group">
 
-                  <input type="text" id="company_name" name="company_name" class="form-control" value="" placeholder="Nombre de la compa&ntilde;&iacute;a o instituci&oacute;n" ng-model="company_name">
+                  <input type="text" id="company_name" name="company_name" class="form-control" value="" placeholder="Nombre de la compa&ntilde;&iacute;a o instituci&oacute;n" ng-model="company_name" input-Max-Length="25">
 
                 </div>
                 <!-- /.form-group -->
@@ -270,7 +274,7 @@
                 <h5 class="question">Escriba su testimonio</h5>
                 <div class="form-group">
 
-                  <textarea id="testimonial" name="testimonial" ng-model="testimonial" class="form-control" value=""></textarea>
+                  <textarea id="testimonial" name="testimonial" ng-model="testimonial" class="form-control" value="" input-Max-Length="1000"></textarea>
 
                   <label for="share-testimonial" class="share-testimonial">
                     <input id="share-testimonial" type="checkbox" ng-model="agree_publish" value="share testimonial"/>
@@ -283,7 +287,7 @@
                 <h5 class="question">Su nombre completo</h5>
                 <div class="form-group">
 
-                  <input type="text" id="full_name" name="full_name" class="form-control" value="" ng-model="name" placeholder="Nombre Completo">
+                  <input type="text" id="full_name" name="full_name" class="form-control" value="" ng-model="name" placeholder="Nombre Completo" input-Max-Length="60">
 
                 </div>
                 <!-- /.form-group -->
@@ -291,7 +295,7 @@
                 <h5 class="question">N&uacute;mero de c&eacute;dula</h5>
                 <div class="form-group">
 
-                  <input type="text" id="id_number" name="id_number" class="form-control" value="" ng-model="id_number" placeholder="C&eacute;dula">
+                  <input type="text" id="id_number" name="id_number" class="form-control" value="" ng-model="id_number" placeholder="C&eacute;dula" input-Max-Length="15">
 
                 </div>
                 <!-- /.form-group -->
@@ -305,6 +309,12 @@
                 <button type="submit" class="button button-orange" id="submit-survey" ng-disabled="respondent.$invalid" ng-class="{ 'has-error' : respondent.$invalid }" ng-click="Submit">
                   Enviar
                 </button>
+
+                <br>
+
+                <div class="alert alert-danger" ng-show="respondent.$invalid">
+                  <p>No se han completado todos los campos requeridos. Los campos requeridos tienen un * contiguo a su t&iacute;tulo</p>
+                </div>
 
               </fieldset>
               <!-- /fieldset -->
